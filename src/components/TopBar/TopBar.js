@@ -1,13 +1,15 @@
+import "./TopBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import "./TopBar.css";
+import removeTokens from "../../utils/tokens/removeTokens";
 
 function TopBar() {
   const handleLogOut = () => {
-    localStorage.removeItem("access_token");
+    removeTokens();
     <Navigate to="/" />;
   };
+  
   return (
     <nav className="nav">
       <a href="/home" className="site-title">
